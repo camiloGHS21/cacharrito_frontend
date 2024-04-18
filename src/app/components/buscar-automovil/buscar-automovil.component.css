@@ -1,0 +1,81 @@
+.card {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border-radius: 32px 0px 0px 32px;
+  background: whitesmoke;
+  color: black;
+  max-width: 100%; /* Make card width responsive */
+  z-index: 1;
+}
+
+.icono {
+  color: black;
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
+.row > *{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mat-label, .mat-option-text, .mat-select {
+  color: black;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.mat-form-field {
+  width: 160px; /* Full width on smaller screens */
+}
+
+.form-field {
+  width: 100%; /* Full width on smaller screens */
+}
+
+.btn-search {
+  width: 100%; /* Full width on smaller screens */
+  height: 110px;
+  padding: 40px;
+  gap: 12px;
+  background: #000000;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border: none;
+  border-radius: 0px 32px 32px 0px;
+}
+
+.btn-search:hover {
+  background: #152a2a;
+}
+
+@media (min-width: 768px) {
+  .btn-search {
+    width: 243px; /* Specific width on medium screens and above */
+  }
+
+}
+@media screen and (max-width: 768px) {
+  .mat-form-field {
+  width: 100%; /* Full width on smaller screens */
+}
+.card{
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 32px 32px 32px 32px;
+}
+.btn-search {
+   width: 100%;
+  border-radius: 32px 32px 32px 32px;
+
+}
+.row {
+  justify-content: space-around;
+}
+
+}
+.invalid-input {
+  border-color: red;
+}

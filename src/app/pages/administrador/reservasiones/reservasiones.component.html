@@ -1,0 +1,116 @@
+<br />
+<h4 class="text-danger">Reservaciones</h4>
+<br />
+<div class="col_one_third col_last c-azul">
+  <label for="nacimiento" class="m-3">Dia de Reserva:  <small></small></label>
+  <input type="number" id="nacimiento"  name="nacimiento"  class="sm-form-control" min="1" max="30" value="1" (change)="buscarPorDia($event.target.value)" />
+</div>
+<table class="table table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">id_de_reserva</th>
+      <th scope="col">destino</th>
+      <th scope="col">origen</th>
+      <th scope="col">hora_de_salida</th>
+      <th scope="col">fecha</th>
+      <th scope="col">total_a_pagar</th>
+      <th scope="col">estado</th>
+      <th scope="col">id_disponibilidad</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <!-- @for (empleado of empleados; track $index) {
+      <tr >
+      <th>{{empleado.nombre}}</th>
+      <th>{{empleado.apellidos}}</th>
+      <th>{{empleado.correo}}</th>
+    </tr>
+    } -->
+    <tr *ngFor="let reservacion of reservaciones">
+      <th scope="col">{{reservacion.id_de_reserva}}</th>
+      <th scope="col">{{reservacion.destino}}</th>
+      <th scope="col">{{reservacion.origen}}</th>
+      <th scope="col">{{reservacion.hora_de_salida}}</th>
+      <th scope="col">{{reservacion.fecha | date}}</th>
+      <th scope="col">{{reservacion.total_a_pagar}}</th>
+      <th scope="col">{{reservacion.estado}}</th>
+      <th scope="col">{{reservacion.disponibilidad.id_disponibilidad}}</th>
+      <th>
+        <button type="button" class="btn btn-primary"  (click)="editarReservacion(reservacion.id_de_reserva)">Editar</button>
+        <button type="button" class="btn btn-danger "  (click)="cancelarReservacion(reservacion.id_de_reserva)" >cancelar</button>
+        <button type="button" class="btn btn-danger" (click)="pagadaReservacion(reservacion.id_de_reserva)" >pagada</button>
+      </th>
+    </tr>
+  </tbody>
+</table>
+<div class="modal" tabindex="-1" id="actualizar">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="cerrarRegistro()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="origen" class="form-label">origen</label>
+          <input type="text" [(ngModel)]="reservacion.origen" class="form-control" aria-describedby="destinoHelp" name="origen" id="origen" />
+        </div>
+        <div class="mb-3">
+          <label for="destino" class="form-label">destino</label>
+          <input type="text" [(ngModel)]="reservacion.destino" class="form-control" aria-describedby="destinoHelp" name="destino" id="destino" />
+        </div>
+        <div class="mb-3">
+          <label for="estado" class="form-label">Estado</label>
+          <select class="form-select" [(ngModel)]="reservacion.estado" id="estado" aria-label="Default select example">
+            <option *ngFor="let estado of estados" [value]="estado.value">
+              {{ estado.display }}
+            </option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="feacha" class="form-label">fecha</label>
+          <input
+          type="text"
+          class="form-control"
+          aria-describedby="fecha"
+          [(ngModel)]="reservacion.fecha"
+          name="fecha" id="fecha"
+        />
+        </div>
+        <div class="mb-3">
+          <label for="hora_de_salida" class="form-label">hora_de_salida</label>
+          <input type="text" class="form-control" aria-describedby="hora_de_salidaHelp" [(ngModel)]="reservacion.hora_de_salida" name="hora_de_salida" id="hora_de_salida" />
+        </div>
+        <div class="mb-3">
+          <label for="id_disponibilidad" class="form-label">id de disponibilidad</label>
+          <input type="text" class="form-control" aria-describedby="id_disponibilidadHelp" [(ngModel)]="reservacion.disponibilidad.id_disponibilidad" name="id_disponibilidad" id="id_disponibilidad" />
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          (click)="cerrarRegistro()"
+        >
+          Cerrar
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="guardarRegistro()"
+        >
+          Guardar cambios
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+label, .form-select {
+  display: inline-block;
+  margin-right: 30px;
+}
+.form-select{
+  width: 25%;
+}
+
+label{
+  font-style: italic;
+  font-size: 1.4rem;
+}
+
+.form-select option {
+  font-size: 1.4rem;
+  color: black;
+  background-color: whitesmoke;
+  padding: 5px;
+  margin: 15px;
+  cursor: pointer;
+}

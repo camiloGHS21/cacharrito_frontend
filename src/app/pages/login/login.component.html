@@ -1,0 +1,26 @@
+<div class="card mt-5 w-75 mx-auto">
+  <div class="card-body">
+    <form>
+
+      <h1 class="h3 mb-3 fw-normal mt-5 mb-5 text-center">Iniciar Sesión <i class="fa-solid fa-right-to-bracket fa-beat fa-xl"></i></h1>
+
+      <div class="form-floating mb-3 px-4">
+        <input type="text" class="form-control" id="username" placeholder="name@example.com" [(ngModel)]="admin.username" id="username" name="username">
+        <label for="username" class="form-label">Usuario</label>
+      </div>
+      <div class="form-floating mb-4 px-4">
+        <input type="password" class="form-control" id="password" placeholder="Contraseña" [(ngModel)]="admin.password" id="password" name="password">
+        <label for="password" class="form-label">Contraseña</label>
+      </div>
+
+      <div class="form-check text-start my-3 px-4">
+        <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Recordar Sesión
+        </label>
+      </div>
+      <button class="btn btn-primary w-100 py-2" type="button" (click)="onSubmit()">Iniciar Sesión</button>
+      <p class="mt-5 mb-3 text-body-secondary text-center">© 2017–2024</p>
+    </form>
+  </div>
+</div>

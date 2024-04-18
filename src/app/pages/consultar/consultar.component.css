@@ -1,0 +1,13 @@
+label, .form-control {
+  display: inline-block;
+  margin-right: 30px;
+}
+.form-control{
+  width: 25%;
+}
+
+label{
+  font-style: italic;
+  font-size: 1.4rem;
+}
+
