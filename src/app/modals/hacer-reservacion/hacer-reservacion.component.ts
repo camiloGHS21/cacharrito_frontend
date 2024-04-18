@@ -17,7 +17,7 @@ export class HacerReservacionComponent {
  @Input() id:any ;
  @Input() id_disponibilidad:any ;
  @Input() total_a_pagar:number ;
- @Output() puestos_disponibles:number;
+ @Input() puestos_disponibles:number;
 
 usuario: Usuarios = new Usuarios();
 
@@ -49,7 +49,12 @@ guardarRegistro(): void {
        this.actualizarDisponibilidad(this.id_disponibilidad);
        this.cerrarRegistro();
        window.location.reload();
-       alert("Reservacion realizada con exito"+"\n total a pagar : "+this.total_a_pagar+"\n puesto asignado : "+(this.puestos_disponibles));
+       const puesto_anterior = this.puestos_disponibles;
+       if(puesto_anterior == this.puestos_disponibles){
+         alert("Reservacion realizada con exito"+"\n total a pagar : "+this.total_a_pagar+"\n puesto asignado : "+(puesto_anterior));
+       }else{
+         alert("Reservacion realizada con exito"+"\n total a pagar : "+this.total_a_pagar+"\n puesto asignado : "+(this.puestos_disponibles-1));
+       }
 
 
      }
