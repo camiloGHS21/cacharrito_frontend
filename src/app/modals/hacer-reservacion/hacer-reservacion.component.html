@@ -1,0 +1,93 @@
+
+
+<div class="modal" tabindex="-1" id="registro">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="cerrarRegistro()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="cedula" class="form-label">Cedula </label>
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="cedulaHelp"
+            [(ngModel)]="usuario.cedula" name="cedula" id="cedula"
+            required
+          />
+        </div>
+         <div class="mb-3">
+          <label for="apellido" class="form-label">Apellidos</label>
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="apellidoHelp"
+            [(ngModel)]="usuario.apellido" name="apellido" id="apellido"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="nombreHelp"
+            [(ngModel)]="usuario.nombre" name="nombre" id="nombre"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="fechaNacimiento" class="form-label"
+            >fecha de nacimiento </label
+          >
+          <input
+            type="date"
+            class="form-control"
+            aria-describedby="fechaNacimientoHelp"
+            [(ngModel)]="usuario.fechaNacimiento" name="fechaNacimiento" id="fechaNacimiento"
+            required
+          />
+      </div>
+
+      <div class="mb-3">
+        <label for="telefono" class="form-label"
+          >numero de telefono</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          aria-describedby="telefonoHelp"
+          [(ngModel)]="usuario.telefono" name="telefono" id="telefono"
+          required
+        />
+      </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            (click)="cerrarRegistro()"
+          >
+            Cerrar
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="guardarRegistro()"
+          >
+            Reservar
+          </button>
+        </div>
+    </div>
+    </div>
+  </div>
+

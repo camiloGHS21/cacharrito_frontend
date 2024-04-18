@@ -1,0 +1,33 @@
+<div class="d-flex align-items-center justify-content-center" *ngFor="let item of reservacion">
+  <div class="card my-3 p-3" style="width: 60rem;">
+    <div class="row align-items-center mb-2">
+      <div class="col">{{item.disponibilidad.automovil.numero_de_automovil}}</div>
+      <div class="col">{{item.hora_de_salida}}</div>
+      <div class="col">${{item.total_a_pagar|number}}</div>
+      <div class="col">{{item.disponibilidad.puestos_disponibles}} sillas disponibles</div>
+    </div>
+    <div class="row align-items-center pt-2">
+      <div class="col"><i class="fa-solid fa-ticket"></i>&nbsp;Reembolsable</div>
+      <div class="col"><i class="fa-regular fa-clock"></i>&nbsp;Reprogramable</div>
+      <div class="col"> cargo: 4000</div>
+      <div class="col"><i class="bi bi-people"></i>&nbsp;{{item.disponibilidad.automovil.numero_de_puestos}}</div>
+
+
+    </div>
+    <div class="row align-items-center mb-2">
+
+      <div class="col"></div>
+
+      <div class="col"></div>
+      <div class="col "></div>
+      <br>
+      <div class="col pt-3" >
+        <button type="button" class="btn btn-primary" (click)="abrirRegistro(item.id_de_reserva,item.disponibilidad.id_disponibilidad,item.total_a_pagar,item.disponibilidad.puestos_disponibles)" >Reserva</button>
+        <!-- Llama al componente hacer-reservacion y pasa el ID de reservación -->
+        <app-hacer-reservacion [id]="id" [id_disponibilidad]="id_de_disponibilidad" [total_a_pagar]="total_a_pagar" [puestos_disponibles]="puestos_disponibles"></app-hacer-reservacion>
+        <!-- {{item.id_de_reserva}} -->
+         <!-- Agrega esta línea para depurar -->
+      </div>
+    </div>
+  </div>
+</div>

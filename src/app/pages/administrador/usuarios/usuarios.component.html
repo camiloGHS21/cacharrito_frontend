@@ -1,0 +1,40 @@
+<br />
+<h4 class="text-danger">Usuarios</h4>
+<button type="button" class="btn btn-primary" (click)="abrirRegistro()" >Reservar a usuario</button>
+<br>
+<app-registrar-usuarios/>
+<br />
+<div class="col_one_third col_last c-azul">
+  <label>Seleccione un automovil: </label>
+  <select class="form-select mb-3" aria-label="Default select example"  (click)="seleccionar($event.target.value)">
+
+    <option *ngFor="let automovil of automoviles"  [value]="automovil.numero_de_automovil" >{{automovil.numero_de_automovil}}</option>
+  </select>
+</div>
+<table class="table table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">cedula</th>
+      <th scope="col">nombre</th>
+      <th scope="col">apellido</th>
+      <th scope="col">telefono</th>
+      <th scope="col">id_de_reserva</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- @for (empleado of empleados; track $index) {
+      <tr >
+      <th>{{empleado.nombre}}</th>
+      <th>{{empleado.apellidos}}</th>
+      <th>{{empleado.correo}}</th>
+    </tr>
+    } -->
+    <tr *ngFor="let usuario of usuarios">
+      <th scope="col">{{ usuario.cedula }}</th>
+      <th scope="col">{{ usuario.nombre }}</th>
+      <th scope="col">{{ usuario.apellido }}</th>
+      <th scope="col">{{ usuario.telefono }}</th>
+      <td scope="col">{{ usuario.reservaciones.id_de_reserva }}</td>
+    </tr>
+  </tbody>
+</table>

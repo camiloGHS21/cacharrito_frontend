@@ -1,0 +1,8 @@
+<div *ngIf="InRserva">
+  <app-card-reservacion [reservacion]="reservaciones"></app-card-reservacion>
+</div>
+
+<div *ngIf="!InRserva">
+  <app-card-reservacion [reservacion]="reservaciones2"></app-card-reservacion>
+</div>
+

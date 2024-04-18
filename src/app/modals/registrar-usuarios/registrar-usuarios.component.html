@@ -1,0 +1,100 @@
+
+
+<div class="modal" tabindex="-1" id="registro-usuario">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="cerrarRegistro()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="cedula" class="form-label">Cedula </label>
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="cedulaHelp"
+            [(ngModel)]="usuario.cedula"
+            name="cedula" id="cedula"
+          />
+        </div>
+         <div class="mb-3">
+          <label for="apellido" class="form-label">Apellidos</label>
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="apellidoHelp"
+            [(ngModel)]="usuario.apellido"
+             name="apellido" id="apellido"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            aria-describedby="nombreHelp"
+            [(ngModel)]="usuario.nombre"
+           name="nombre" id="nombre"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="fechaNacimiento" class="form-label"
+            >fecha de nacimiento </label
+          >
+          <input
+            type="date"
+            class="form-control"
+            aria-describedby="fechaNacimientoHelp"
+            [(ngModel)]="usuario.fechaNacimiento"
+             name="fechaNacimiento" id="fechaNacimiento"
+          />
+      </div>
+
+      <div class="mb-3">
+        <label for="telefono" class="form-label"
+          >numero de telefono</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          aria-describedby="telefonoHelp"
+          [(ngModel)]="usuario.telefono"
+           name="telefono" id="telefono"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="id_de_reserva" class="form-label">id de reserva</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="usuario.reservaciones.id_de_reserva" name="id_de_reserva" id="id_de_reserva">
+          <option selected>selecciona el id de reserva</option>
+          <option value="1" *ngFor=" let id of idreservacion" [value]="id">{{id}}</option>
+        </select>
+      </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            (click)="cerrarRegistro()"
+          >
+            Cerrar
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="guardarUsuario()"
+          >
+            Guardar cambios
+          </button>
+        </div>
+    </div>
+    </div>
+  </div>
+

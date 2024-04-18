@@ -1,0 +1,35 @@
+<div class="container">
+  <label for="cedula">cedula</label>
+<input type="number" class="form-control m-3"  (change)="consultarPorId($event.target.value)">
+
+</div>
+
+<table class="table table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">id_de_reserva</th>
+      <th scope="col">destino</th>
+      <th scope="col">origen</th>
+      <th scope="col">hora_de_salida</th>
+      <th scope="col">fecha</th>
+      <th scope="col">total_a_pagar</th>
+      <th scope="col">estado</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let reservacion of reservas">
+      <th scope="col">{{reservacion.id_de_reserva}}</th>
+      <th scope="col">{{reservacion.destino}}</th>
+      <th scope="col">{{reservacion.origen}}</th>
+      <th scope="col">{{reservacion.hora_de_salida}}</th>
+      <th scope="col">{{reservacion.fecha | date}}</th>
+      <th scope="col">{{reservacion.total_a_pagar}}</th>
+      <th scope="col">{{reservacion.estado}}</th>
+      <th>
+        <button type="button" class="btn btn-danger "  (click)="cancelarReservacion(reservacion.id_de_reserva)" >cancelar</button>
+      </th>
+    </tr>
+  </tbody>
+</table>

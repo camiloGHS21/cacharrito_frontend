@@ -1,0 +1,75 @@
+<div class="modal" tabindex="-1" id="registro">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="cerrarRegistro()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="origen" class="form-label">origen</label>
+          <input type="text" class="form-control" aria-describedby="destinoHelp" name="origen" id="origen" />
+        </div>
+        <div class="mb-3">
+          <label for="destino" class="form-label">destino</label>
+          <input type="text" class="form-control" aria-describedby="destinoHelp" name="destino" id="destino" />
+        </div>
+        <div class="mb-3">
+          <label for="destino" class="form-label">destino</label>
+          <input type="text" class="form-control" aria-describedby="destinoHelp" name="destino" id="destino" />
+        </div>
+        <div class="mb-3">
+          <label for="estado" class="form-label">estado</label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>selecciona el estado</option>
+            <option value="true">true</option>
+            <option value="false">false</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="feacha" class="form-label">fecha</label>
+          <input
+          type="date"
+          class="form-control"
+          aria-describedby="fecha"
+          name="fecha" id="fecha"
+        />
+        </div>
+        <div class="mb-3">
+          <label for="hora_de_salida" class="form-label">hora_de_salida</label>
+          <input type="time" class="form-control" aria-describedby="hora_de_salidaHelp" name="hora_de_salida" id="hora_de_salida" />
+        </div>
+        <div class="mb-3">
+          <label for="id_disponibilidad" class="form-label">id de disponibilidad</label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>selecciona el id de disponibilidad</option>
+            <option value="true">id</option>
+          </select>
+        </div>
+        id_disponibilidad
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          (click)="cerrarRegistro()"
+        >
+          Cerrar
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="guardarRegistro()"
+        >
+          Guardar cambios
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
